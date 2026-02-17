@@ -1,6 +1,7 @@
 import os
 import subprocess
 import shlex
+import shutil
 
 while True:
     name_dirt = input("Enter a Directory name : ")
@@ -35,5 +36,6 @@ while True:
                 subprocess.run(shlex.split("sudo apt-get install git"))
             else:
                 print("Please give proper Input")
+
 
 
