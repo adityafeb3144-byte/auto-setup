@@ -24,11 +24,14 @@ while True:
         print("Git is not installed in the device")
         permission = input("Do you want to install Git [Y/N] : ")
         if permission.lower() == "y":
-            device = input("Enter your input for device \nWindows : W\nmacOS : M\nLinux : N")
+            device = input("Enter your input for device \nWindows : W\nmacOS : M\nLinux : l")
             if device.lower() == "w":
                 subprocess.run(shlex.split("winget install --id Git.Git -e --source winget"))
             elif device.lower() == "m":
                 subprocess.run(shlex.split("brew install git"))
-            else:
+            elif device.lower() == "n":
                 subprocess.run(shlex.split("sudo apt-get update"))
                 subprocess.run(shlex.split("sudo apt-get install git"))
+            else:
+                print("Please give proper Input")
+
