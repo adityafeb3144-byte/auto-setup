@@ -16,11 +16,12 @@ data.close()
 
 os.chdir(f"{name_dirt}")
 while True:
-    try :
-        subprocess.run(shlex.split("git init"))
-        subprocess.run(shlex.split("git add ."))
+    if shutil.which("git"):
+        subprocess.run(["git", "init"])
+        subprocess.run(["git", "add", "."])
+        print(f"Successfully initialized Git in {name_dirt}")
         break
-    except :
+    else :
         print("Git is not installed in the device")
         permission = input("Do you want to install Git [Y/N] : ")
         if permission.lower() == "y":
@@ -29,9 +30,10 @@ while True:
                 subprocess.run(shlex.split("winget install --id Git.Git -e --source winget"))
             elif device.lower() == "m":
                 subprocess.run(shlex.split("brew install git"))
-            elif device.lower() == "n":
+            elif device.lower() == "l":
                 subprocess.run(shlex.split("sudo apt-get update"))
                 subprocess.run(shlex.split("sudo apt-get install git"))
             else:
                 print("Please give proper Input")
+
 
