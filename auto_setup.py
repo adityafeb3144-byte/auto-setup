@@ -22,4 +22,5 @@ except :
     print("Git is not installed in the device")
     permission = input("Do you want to install Git [Y/N] : ")
     if permission.lower() == "y":
-        subprocess.run(shlex.split(""))
+
+        subprocess.run(shlex.split("exception handling is done"))
