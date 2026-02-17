@@ -1,47 +1,55 @@
-Project Automator 🚀
-A Python-based utility script designed to streamline the initial setup of new coding projects. With a single command, it creates a structured environment and initializes version control.
+🚀 Git Project Initializer Script
 
-🛠 Features
-Automatic Directory Creation: Prompts for a project name and builds the folder instantly.
+A Python automation script that:
 
-Boilerplate Generation: Automatically creates a solution.py file so you can start coding immediately.
+Creates a new directory
 
-Git Integration: Initializes a new Git repository and stages your initial files automatically.
+Generates a solution.py file inside it
 
-🚀 How to Use
-1. Prerequisites
-Ensure you have Python 3.x and Git installed on your system.
+Initializes a Git repository
 
-2. Running the Script
-Open your terminal or command prompt.
+Automatically stages all files
 
-Navigate to the folder where auto_setup.py is located.
+Installs Git (if not already installed)
 
-Run the script using:
+📌 What This Script Does
 
-Bash
-python auto_setup.py
-Enter your desired project name when prompted.
+Prompts the user to enter a directory name
 
-📂 Project Structure
-After running the script, your new project directory will look like this:
+Creates the directory (if it doesn’t already exist)
 
-Plaintext
-[Your Project Name]/
-├── .git/            # Initialized Git repository
-└── solution.py      # Your main Python script
-📝 Code Overview
-The script utilizes the following Python modules:
+Creates an empty solution.py file inside it
 
-os: To handle directory creation and navigation.
+Checks if Git is installed
 
-subprocess: To execute Git commands directly from the script.
+If Git is installed:
 
-shlex: To safely split command strings for the shell.
+Runs git init
 
-💡 Future Improvements
-Add a .gitignore file automatically.
+Runs git add .
 
-Allow the user to choose between different file templates (e.g., .js, .cpp).
+If Git is NOT installed:
 
-Add error handling for cases where a directory already exists.
+Asks for permission to install
+
+Installs Git depending on OS:
+
+Windows (winget)
+
+macOS (brew)
+
+Linux (apt)
+
+🛠 Technologies Used
+
+Python
+
+os module
+
+subprocess module
+
+shlex module
+
+shutil module
+
+Git
